@@ -3,7 +3,7 @@
 # Run: curl -L -s https://raw.githubusercontent.com/danbooru/danbooru/master/INSTALL.debian -o install.sh ; chmod +x install.sh ; ./install.sh
 
 export RUBY_VERSION=3.1.2
-export GITHUB_INSTALL_SCRIPTS=https://raw.githubusercontent.com/danbooru/danbooru/master/script/install
+export GITHUB_INSTALL_SCRIPTS=https://raw.githubusercontent.com/twispcore/danbooru/master/script/install
 export VIPS_VERSION=8.7.0
 
 if [[ "$(whoami)" != "root" ]] ; then
@@ -102,7 +102,7 @@ echo "* Install configuration scripts..."
 curl -L -s $GITHUB_INSTALL_SCRIPTS/postgresql_hba_conf -o /etc/postgresql/$PG_VERSION/main/pg_hba.conf
 /etc/init.d/postgresql restart
 sudo -u postgres createuser -s danbooru
-sudo -u danbooru createdb danbooru2
+sudo -u danbooru createdb mcytbooru
 
 # Setup nginx
 curl -L -s $GITHUB_INSTALL_SCRIPTS/nginx.danbooru.conf -o /etc/nginx/sites-enabled/danbooru.conf
