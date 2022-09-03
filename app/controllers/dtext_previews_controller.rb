@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 class DtextPreviewsController < ApplicationController
   def create
-    body = params[:body] || ""
-    dtext = helpers.format_text(body, allow_color: CurrentUser.user.is_privileged?)
-    render json: { html: dtext, posts: deferred_posts }
+    @inline = params[:inline].to_s.truthy?
+    @disable_mentions = params[:disable_mentions].to_s.truthy?
+    @html = helpers.format_text(params[:body], inline: @inline, disable_mentions: @disable_mentions)
+
+    render html: @html
   end
 end
