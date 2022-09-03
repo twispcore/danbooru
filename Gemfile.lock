@@ -1,9 +1,8 @@
 GIT
-  remote: https://github.com/zwagoth/dtext_rb.git
-  revision: efc37c7795c53425935245cde57cef2121b4f402
-  branch: master
+  remote: https://github.com/danbooru/dtext_rb.git
+  revision: 954cd9aa52401108beed122fe93203b0beb8682a
   specs:
-    dtext_rb (1.10.19)
+    dtext_rb (1.10.7)
       nokogiri (~> 1.8)
 
 GIT
